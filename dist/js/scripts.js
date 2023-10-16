@@ -19,7 +19,7 @@ $(document).ready(function(){
     $('.btn-play').click(function () {
         $videoSrc = $(this).data("src");
     });
-    console.log($videoSrc);
+    //console.log($videoSrc);
 
     $('#videoModal').on('shown.bs.modal', function (e) {
         $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
@@ -36,7 +36,7 @@ $(document).ready(function () {
     $('.btn-play1').click(function () {
         $videoSrc = $(this).data("src");
     });
-    console.log($videoSrc);
+    //console.log($videoSrc);
 
     $('#videoModal1').on('shown.bs.modal', function (e) {
         $("#video1").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
