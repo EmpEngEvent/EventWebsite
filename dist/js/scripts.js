@@ -95,44 +95,42 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
-
 // Define the URL of the API you want to send a POST request to
-const apiUrl = "https://hooks.zapier.com/hooks/catch/16738229/3swvzr5/";
+const apiUrl = "https://hooks.zapier.com/hooks/catch/16779858/3slkpml/";
 
 // Create a data object with the data you want to send
-
 function saveSpotDetails() {
-    const postData = {
-      FirstName: document.getElementById("fname").value,
-      LastName: document.getElementById("lname").value,
-      Email: document.getElementById("email").value,
-      Company:document.getElementById("company").value,
-      Parking:document.getElementsByName("parking").value
-    };
-  
-    console.log(postData);
-    const requestOptions = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(postData),
-      mode: "no-cors"
-    };
-    fetch(apiUrl, requestOptions)
-      .then((response) => {
-          var successAlert = document.getElementById("successAlert");
-          successAlert.innerHTML ="Your spot reserved successfully!!"
-          document.getElementById("sponsorModal").reset();
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error("There was a problem with the fetch operation:", error);
-      });
-  }
+  const postData = {
+    FirstName: document.getElementById("fname").value,
+    LastName: document.getElementById("lname").value,
+    Email: document.getElementById("email").value,
+    Company: document.getElementById("company").value,
+    Parking: document.querySelector('input[name="parking"]:checked').value
+  };
+
+  const requestOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(postData),
+    mode: "no-cors"
+  };
+
+  fetch(apiUrl, requestOptions)
+    .then((response) => {
+      var successAlert = document.getElementById("successAlert");
+      successAlert.innerHTML = "Your spot reserved successfully!!"
+      document.getElementById("sponsorModal").reset();
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.error("There was a problem with the fetch operation:", error);
+    });
+}
