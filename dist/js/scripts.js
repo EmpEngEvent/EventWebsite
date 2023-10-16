@@ -19,7 +19,7 @@ $(document).ready(function(){
     $('.btn-play').click(function () {
         $videoSrc = $(this).data("src");
     });
-    console.log($videoSrc);
+    //console.log($videoSrc);
 
     $('#videoModal').on('shown.bs.modal', function (e) {
         $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
@@ -36,7 +36,7 @@ $(document).ready(function () {
     $('.btn-play1').click(function () {
         $videoSrc = $(this).data("src");
     });
-    console.log($videoSrc);
+    //console.log($videoSrc);
 
     $('#videoModal1').on('shown.bs.modal', function (e) {
         $("#video1").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
@@ -97,7 +97,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
 
 // Define the URL of the API you want to send a POST request to
-const apiUrl = "https://hooks.zapier.com/hooks/catch/16738229/3swvzr5/";
+const apiUrl = "https://hooks.zapier.com/hooks/catch/16779858/3slkpml/";
 
 // Create a data object with the data you want to send
 
@@ -110,7 +110,7 @@ function saveSpotDetails() {
       Parking:document.getElementsByName("parking").value
     };
   
-    console.log(postData);
+    console.log('before fetch: ', postData);
     const requestOptions = {
       method: "POST",
       headers: {
