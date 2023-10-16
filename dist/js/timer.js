@@ -1,5 +1,5 @@
 // const targetDate = new Date();
-var targetDate = new Date("Mar 3, 2023 16:00:00").getTime();
+var targetDate = new Date("Oct 25, 2023 16:00:00").getTime();
 
 // targetDate.setHours(targetDate.getHours() + 25);
 // console.log('targetDate 2 =>',targetDate);
